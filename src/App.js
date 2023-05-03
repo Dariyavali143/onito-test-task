@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import RegisterPage from './Components/RegisterPage';
+import Getdata from './Components/Getdata';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RegisterPage />} />
+          <Route path="/Getdata" element={<Getdata />} />
+          <Route path="/*" element={<h1> PageNotFound</h1>} />
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
